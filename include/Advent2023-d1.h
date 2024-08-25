@@ -2,25 +2,19 @@
 
 #include <string>
 
-enum class SOLUTION_TYPE : int
-{
-  UNOPTIMIZED = 0
-};
-
 class Advent2023D1
 {
   public:
-  Advent2023D1(SOLUTION_TYPE solutionType)
-	: mSolutionType(solutionType)
-  {
-  }
+  Advent2023D1(bool useLetterDigits) : mUseLetterDigits(useLetterDigits) {}
 
   ~Advent2023D1() = default;
 
-  int Solve(const std::string& inputFile);
+  int SolveInput(const std::string& inputFile);
+  int Solve(std::istream& input);
 
   private:
-  int GetUnoptimizedLineValue(const std::string& line) const;
+  int GetNumberLineValue(const std::string& line) const;
+  int GetLetterDigitsLineValue(const std::string& line) const;
 
-  SOLUTION_TYPE mSolutionType;
+  bool mUseLetterDigits = false;
 };
