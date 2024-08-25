@@ -53,5 +53,5 @@ TEST(Advent2023_Day1, TestSolutionWithLetterDigit)
 
   const auto solution = advent2023D1.SolveInput("../../res/2023/Day1/input.txt");
 
-  EXPECT_EQ(solution, 54194);
+  EXPECT_EQ(solution, 54208);
 }

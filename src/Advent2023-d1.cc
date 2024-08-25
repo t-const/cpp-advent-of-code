@@ -111,7 +111,6 @@ int Advent2023D1::GetLetterDigitsLineValue(const std::string& line) const
 			continue;
 		}
 
-		bool foundDigit = false;
 		for(const auto [spelled, digit] : DIGITS)
 		{
 			if(!strToCompute.starts_with(spelled))
@@ -120,15 +119,7 @@ int Advent2023D1::GetLetterDigitsLineValue(const std::string& line) const
 			}
 
 			numbersInLine.emplace_back(digit);
-			const auto digitCharCount = spelled.length();
-			strToCompute = strToCompute.substr(digitCharCount, strToCompute.length() - digitCharCount);
-			foundDigit = true;
 			break;
-		}
-
-		if(foundDigit)
-		{
-			continue;
 		}
 
 		strToCompute = strToCompute.substr(1, strToCompute.length() - 1);
