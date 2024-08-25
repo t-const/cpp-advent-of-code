@@ -10,4 +10,4 @@ set(testTarget ${PROJECT_NAME}-test)
 CreateTest(${testTarget} "${CMAKE_CURRENT_SOURCE_DIR}/unit-tests")
 
 # Link the test executable with GoogleTest and pthread
-target_link_libraries(${testTarget} GTest::gtest_main pthread)
+target_link_libraries(${testTarget} GTest::gtest_main pthread ${libraryName})
